@@ -1,0 +1,6 @@
+.git
+.DS_Stroe
+.project
+node_modules
+.vscode
+.editorconfig

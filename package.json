@@ -1,0 +1,24 @@
+{
+  "name": "debug-phone",
+  "version": "0.0.0-alpha",
+  "description": "🔧 Debug module for browsers which can Display on page or in Console, for Phone debugging.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hai2007/Debug-Phone.git"
+  },
+  "keywords": [
+    "debug",
+    "phone",
+    "old-ie"
+  ],
+  "author": "hai2007",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hai2007/Debug-Phone/issues"
+  },
+  "homepage": "https://github.com/hai2007/Debug-Phone#readme"
+}
