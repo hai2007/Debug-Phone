@@ -2,9 +2,15 @@
   "name": "debug-phone",
   "version": "0.0.0-alpha",
   "description": "🔧 Debug module for browsers which can Display on page or in Console, for Phone debugging.",
-  "main": "index.js",
+  "main": "dist/debug-phone.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node_modules/.bin/webpack-dev-server --config webpack.dev.js",
+    "clean": "cuf -d ./dist",
+    "build": "npm run clean && npm run prod && npm run add-banner",
+    "add-banner": "cuf --config ./cuf.config.js",
+    "prod": "node_modules/.bin/webpack --config webpack.prod.js",
+    "start": "npm install && npm run dev",
+    "server": "cuf -s 20000"
   },
   "repository": {
     "type": "git",
@@ -20,5 +26,28 @@
   "bugs": {
     "url": "https://github.com/hai2007/Debug-Phone/issues"
   },
-  "homepage": "https://github.com/hai2007/Debug-Phone#readme"
+  "homepage": "https://github.com/hai2007/Debug-Phone#readme",
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "autoprefixer": "^9.7.1",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^2.1.1",
+    "cuf": "^1.2.0",
+    "file-loader": "^4.2.0",
+    "icrush-loader": "^0.2.1",
+    "icrush-loader-plug": "^0.2.1",
+    "icrush-style-loader": "^1.0.4",
+    "postcss": "^7.0.21",
+    "postcss-loader": "^3.0.0",
+    "url-loader": "^2.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "@hai2007/style": "^0.1.2",
+    "icrush": "^2.1.0"
+  }
 }

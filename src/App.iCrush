@@ -1,0 +1,116 @@
+<template>
+    <div>
+        <div class="debugger-view" ui-hidden='isHidden'>
+            <ul class="nav" :flag='flag'>
+                <li @click='changeFlag("elements")' class='elements'>Elements</li>
+                <li @click='changeFlag("console")' class='console'>Console</li>
+                <li @click='changeFlag("network")' class='network'>Network</li>
+                <li @click='changeFlag("application")' class='application'>Application</li>
+            </ul>
+            <ul class="content-view">
+                <li ui-show:elements='flag'>
+                    <ui-elements></ui-elements>
+                </li>
+                <li ui-show:console='flag '>
+                    <ui-console></ui-console>
+                </li>
+                <li ui-show:network='flag'>
+                    <ui-network></ui-network>
+                </li>
+                <li ui-show:application='flag'>
+                    <ui-application></ui-application>
+                </li>
+            </ul>
+        </div>
+        <div class="togger-btn" @click='togger()'>调试</div>
+    </div>
+</template>
+<script>
+
+    import Elements from './pages/Elements.iCrush';
+    import Console from './pages/Console.iCrush';
+    import Network from './pages/Network.iCrush';
+    import Application from './pages/Application.iCrush';
+
+    export default {
+        data() {
+            return {
+                isHidden: true,
+                flag: "console"
+            };
+        },
+        methods: {
+            changeFlag(flag) {
+                this.flag = flag;
+            },
+            togger() {
+                let iframe = document.getElementById('@hai2007/debug-phone/iframe');
+                if (this.isHidden) {
+                    iframe.style.width = '100vw';
+                    iframe.style.height = "100vh";
+                    iframe.style.backgroundColor = '#e0d7d7';
+                } else {
+                    iframe.style.width = '50px';
+                    iframe.style.height = '50px';
+                    iframe.style.backgroundColor = '';
+                }
+                this.isHidden = !this.isHidden;
+            }
+
+        },
+        component: {
+            "uiElements": Elements,
+            "uiConsole": Console,
+            "uiNetwork": Network,
+            "uiApplication": Application
+        }
+    };
+
+</script>
+<style>
+    ul.content-view {
+        height: calc(100vh - 36px);
+        overflow: auto;
+    }
+
+    ul.nav>li {
+        display: inline-block;
+        color: #f8f5fb;
+        font-size: 12px;
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    ul.nav[flag='elements']>li.elements,
+    ul.nav[flag='console']>li.console,
+    ul.nav[flag='network']>li.network,
+    ul.nav[flag='application']>li.application {
+        color: white;
+        border-bottom: 2px solid red;
+    }
+
+    ul.nav {
+        border-bottom: 1px solid #dfdbdb;
+    }
+
+    /* 控制显示隐藏的按钮 */
+    div>div.togger-btn {
+        position: fixed;
+        cursor: pointer;
+        user-select: none;
+        top: 0;
+        right: 0;
+        z-index: 9999;
+        background-color: #ff1e8a;
+        margin: 0px;
+        width: 35px;
+        height: 35px;
+        border: 2px dashed #ffffff;
+        border-radius: 50%;
+        line-height: 35px;
+        text-align: center;
+        font-size: 14px;
+        color: white;
+    }
+</style>
