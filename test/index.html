@@ -7,39 +7,90 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Debug Phone 测试</title>
     <script src="../dist/debug-phone.min.js"></script>
+    <style>
+        ul,
+        li {
+            -webkit-margin-before: 0;
+            -webkit-margin-after: 0;
+            -webkit-padding-start: 0;
+            margin-block-end: 0;
+            margin-block-start: 0;
+            padding-inline-start: 0;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+
+        li {
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, .2);
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+
+        ul.console>li {
+            background-color: rgb(5, 158, 5);
+            color: white;
+        }
+
+        ul.xhr>li {
+            background-color: grey;
+            color: white;
+        }
+
+        a {
+            text-align: center;
+            display: block;
+            margin: 20px 0;
+        }
+
+        h2 {
+            color: #00aece;
+            text-align: center;
+            font-size: 34px;
+            font-weight: 400;
+            margin: 0 15%;
+        }
+
+        p {
+            text-align: center;
+            color: gray;
+            padding-bottom: 10px;
+        }
+    </style>
 </head>
 
 <body>
 
+    <h2>
+        Debug Phone
+    </h2>
+    <p>
+        一个可用于调试手机的调试工具
+    </p>
+    <ul class='console'>
+        <li onclick='console.log("log")'>普通日志(log)</li>
+        <li onclick='console.info("info")'>信息日志(info)</li>
+        <li onclick='console.debug("debug")'>调试日志(debug)</li>
+        <li onclick='console.warn("warn")'>警告日志(warn)</li>
+        <li onclick='console.error("error")'>报错日志(error)</li>
+    </ul>
+
     <ul>
+        <li onclick='console.log(window)'>打印对象</li>
+        <li onclick="throw new Error('错误内容')">触发JS Error</li>
+    </ul>
+
+    <ul class='xhr'>
         <li onclick='doSend("get","../package.json")'>[地址存在]点击发送get请求</li>
         <li onclick='doSend("get","../package2.json")'>[地址不存在]点击发送get请求</li>
         <li onclick='doSend("post","../package.json")'>点击发送post请求</li>
-
     </ul>
 
-    <div>
-        <div>
-            <div>
-                <div>1</div>
-            </div>
-        </div>
-    </div>
+    <a href="https://github.com/hai2007/Debug-Phone" target="_blank">查看详情</a>
 
     <script>
-
-        // console
-        console.log('log');
-        console.warn(window);
-        console.error(console.log);
-        console.debug([1, 2, 3]);
-        console.info('hello');
-
-        console.log({
-            info: "0987654321",
-            data: [{}, '111', 4444, false, []]
-        });
-
 
         // network
         function doSend(methodName, url) {

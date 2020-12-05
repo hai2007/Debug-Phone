@@ -1,5 +1,5 @@
-<p align="center"><a href="https://github.com/hai2007/Debug-Phone" target="_blank">
-<img width="400" src="./snipping.png" alt="Debug Phone"></a></p>
+<p align="center"><a href="http://hai2007.gitee.io/debug-phone/test/index.html" target="_blank">
+<img width="400" src="http://hai2007.gitee.io/debug-phone/debug-phone.png" alt="Debug Phone"></a></p>
 
 # Debug Phone - 🔧 一个可用于调试手机的调试工具
 
@@ -10,6 +10,8 @@
   <a href="https://www.npmjs.com/package/debug-phone"><img src="https://img.shields.io/npm/v/debug-phone.svg" alt="Version"></a>
   <a href="https://github.com/Debug-Phone/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/debug-phone.svg" alt="License"></a>
 </p>
+
+- 如果你想查看运行效果，可以[点击此次查看](http://hai2007.gitee.io/debug-phone/test/index.html)。
 
 ## Issues
 使用的时候遇到任何问题或有好的建议，请点击进入[issue](https://github.com/hai2007/Debug-Phone/issues)，欢迎参与维护！
