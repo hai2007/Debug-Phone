@@ -1,16 +1,16 @@
 {
   "name": "debug-phone",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "🔧 Debug module for browsers which can Display on page or in Console, for Phone debugging.",
   "main": "dist/debug-phone.min.js",
   "scripts": {
     "dev": "node_modules/.bin/webpack-dev-server --config webpack.dev.js",
-    "clean": "cuf -d ./dist",
+    "clean": "hai2007_nodejs -d ./dist",
     "build": "npm run clean && npm run prod && npm run add-banner",
-    "add-banner": "cuf --config ./cuf.config.js",
+    "add-banner": "hai2007_nodejs --config ./hai2007_nodejs.config.js",
     "prod": "node_modules/.bin/webpack --config webpack.prod.js",
     "start": "npm install && npm run dev",
-    "server": "cuf -s 20000"
+    "server": "hai2007_nodejs -s 20000"
   },
   "repository": {
     "type": "git",
@@ -30,24 +30,20 @@
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
+    "@hai2007/nodejs": "^1.0.0",
     "@hai2007/style": "^0.1.2",
-    "@hai2007/tool": "^0.4.0",
+    "@hai2007/tool": "^0.6.1",
     "autoprefixer": "^9.7.1",
     "babel-loader": "^8.1.0",
     "css-loader": "^2.1.1",
-    "cuf": "^1.2.0",
     "file-loader": "^4.2.0",
-    "icrush": "^2.1.0",
-    "icrush-loader": "^0.2.1",
-    "icrush-loader-plug": "^0.2.1",
-    "icrush-style-loader": "^1.0.4",
     "postcss": "^7.0.21",
     "postcss-loader": "^3.0.0",
+    "quick-paper": "^0.2.4",
     "url-loader": "^2.2.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^4.2.2",
-    "xhtml.js": "^1.1.2"
+    "webpack-merge": "^4.2.2"
   }
 }

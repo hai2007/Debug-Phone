@@ -1,4 +1,4 @@
-import iCrush from 'icrush';
+import QuickPaper from 'quick-paper';
 import showData from '../services/showData';
 let doit = function (el, binding) {
 
@@ -11,7 +11,7 @@ let doit = function (el, binding) {
 
 // 辅助显示对象
 
-iCrush.directive('uiShowObject', {
+QuickPaper.directive('uiShowObject', {
     inserted: doit,
     update: doit
 });

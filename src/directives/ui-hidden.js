@@ -1,4 +1,4 @@
-import iCrush from 'icrush';
+import QuickPaper from 'quick-paper';
 
 let doit = function (el, binding) {
     if (binding.value) {
@@ -16,7 +16,7 @@ let doit = function (el, binding) {
  *
  */
 
-iCrush.directive('uiHidden', {
+QuickPaper.directive('uiHidden', {
     inserted: doit,
     update: doit
 });

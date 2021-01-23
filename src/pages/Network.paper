@@ -16,9 +16,9 @@
 </template>
 <script>
     import '../styles/network.css';
-    import xhrml from 'xhtml.js';
+    import xhtml from '@hai2007/tool/xhtml.js';
 
-    import networkDialog from '../dialogs/network.iCrush';
+    import networkDialog from '../dialogs/network.paper';
 
     export default {
         data() {
@@ -55,7 +55,7 @@
                 li.setAttribute('id', id);
                 ul.appendChild(li);
 
-                xhrml(li.children[3]).bind('click', () => {
+                xhtml.bind(li.children[3], 'click', () => {
                     window.updatePageNetworkDialogContainer(this.networkMsg[id]);
                     this.$document.getElementById('page-network-dialog').style.display = 'block';
                 });

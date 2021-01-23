@@ -15,8 +15,8 @@
     </div>
 </template>
 <script>
-    import LocalStorage from './Application/LocalStorage.iCrush';
-    import SessionStorage from './Application/SessionStorage.iCrush';
+    import LocalStorage from './Application/LocalStorage.paper';
+    import SessionStorage from './Application/SessionStorage.paper';
 
     import '../styles/application.css';
 

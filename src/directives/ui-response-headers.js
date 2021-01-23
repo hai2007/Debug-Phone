@@ -1,4 +1,4 @@
-import iCrush from 'icrush';
+import QuickPaper from 'quick-paper';
 
 let doit = function (el, binding) {
 
@@ -23,7 +23,7 @@ let doit = function (el, binding) {
 
 // 辅助显示xhr header
 
-iCrush.directive('uiResponseHeaders', {
+QuickPaper.directive('uiResponseHeaders', {
     inserted: doit,
     update: doit
 });

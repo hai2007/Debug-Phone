@@ -2,15 +2,11 @@
     <div>
         <div class="debugger-view" ui-hidden='isHidden'>
             <ul class="nav" :flag='flag'>
-                <li @click='changeFlag("elements")' class='elements'>Elements</li>
                 <li @click='changeFlag("console")' class='console'>Console</li>
                 <li @click='changeFlag("network")' class='network'>Network</li>
                 <li @click='changeFlag("application")' class='application'>Application</li>
             </ul>
             <ul class="content-view">
-                <li ui-show:elements='flag'>
-                    <ui-elements></ui-elements>
-                </li>
                 <li ui-show:console='flag '>
                     <ui-console></ui-console>
                 </li>
@@ -27,16 +23,15 @@
 </template>
 <script>
 
-    import Elements from './pages/Elements.iCrush';
-    import Console from './pages/Console.iCrush';
-    import Network from './pages/Network.iCrush';
-    import Application from './pages/Application.iCrush';
+    import Console from './pages/Console.paper';
+    import Network from './pages/Network.paper';
+    import Application from './pages/Application.paper';
 
     import startUpConsole from './services/Console.js';
     import startUpNetworkXHR from './services/Network@XHR.js';
     import startStorage from './services/storage.js';
 
-    import xhtml from 'xhtml.js';
+    import xhtml from '@hai2007/tool/xhtml.js';
 
     export default {
         data() {
@@ -55,8 +50,8 @@
                 if (/Mobile/.test(navigator.userAgent)) {
                     leftAddRight = 0;
                 } else {
-                    let bodyLeft = +xhtml(document.body).css('margin-left').replace('px', '');
-                    let bodyRight = +xhtml(document.body).css('margin-right').replace('px', '');
+                    let bodyLeft = +xhtml.getStyle(document.body, 'margin-left').replace('px', '');
+                    let bodyRight = +xhtml.getStyle(document.body, 'margin-right').replace('px', '');
                     leftAddRight = bodyRight + bodyLeft;
                 }
                 if (this.isHidden) {
@@ -73,7 +68,6 @@
 
         },
         component: {
-            "uiElements": Elements,
             "uiConsole": Console,
             "uiNetwork": Network,
             "uiApplication": Application
@@ -106,7 +100,6 @@
         cursor: pointer;
     }
 
-    ul.nav[flag='elements']>li.elements,
     ul.nav[flag='console']>li.console,
     ul.nav[flag='network']>li.network,
     ul.nav[flag='application']>li.application {

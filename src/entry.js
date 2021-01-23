@@ -1,7 +1,7 @@
-import iCrush from 'icrush';
+import QuickPaper from 'quick-paper';
 
 // 引入启动界面
-import App from './App.iCrush';
+import App from './App.paper';
 
 // 引入公共样式
 import '@hai2007/style/normalize.css';
@@ -15,7 +15,7 @@ import './directives/ui-response-headers';
 import './directives/ui-show-object';
 
 // 引入全局通知机制
-import event from './plug/@event.js'; iCrush.use(event);
+import event from './plug/@event.js'; QuickPaper.use(event);
 
 // 追加iframe到页面上去
 // 后期整个调试工具的内容都是在这里面进行，隔绝外部环境，避免对工作代码有不好的影响
@@ -43,14 +43,14 @@ iframeDocument.open();
 iframeDocument.write("<div id='root'></div>");
 iframeDocument.close();
 
-iCrush.prototype.$document = iframeDocument;
+QuickPaper.prototype.$document = iframeDocument;
 
-new iCrush({
+new QuickPaper({
 
     //挂载点
     el: iframeDocument.getElementById('root'),
 
-    // 启动iCrush
+    // 启动QuickPaper
     render: createElement => createElement(App)
 
 });

@@ -6,18 +6,24 @@
  *
  */
 
-import iCrush from 'icrush';
-import xhtml from 'xhtml.js';
+import QuickPaper from 'quick-paper';
+import xhtml from '@hai2007/tool/xhtml.js';
 
-iCrush.directive('uiToggerClass', {
+QuickPaper.directive('uiToggerClass', {
 
     inserted(el, binding) {
 
-        let viewXhtml = xhtml(binding.target.$document.getElementById(binding.exp));
+        let viewXhtml = binding.target.$document.getElementById(binding.exp);
 
-        xhtml(el).bind('click', () => {
+        xhtml.bind(el, 'click', () => {
 
             viewXhtml.toggerClass(binding.type);
+
+            if (xhtml.hasClass(viewXhtml, binding.type)) {
+                xhtml.removeClass(viewXhtml, binding.type);
+            } else {
+                xhtml.addClass(viewXhtml, binding.type);
+            }
 
         });
 

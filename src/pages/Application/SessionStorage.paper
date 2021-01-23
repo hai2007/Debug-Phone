@@ -1,5 +1,5 @@
 <template>
-    <div class='view' id='page-application-localstorage-view'>
+    <div class='view' id='page-application-sessionstorage-view'>
         <input type="button" value="清空" @click='clear()'>
         <input type="button" value="同步" @click='updateData()'>
         <table>
@@ -9,11 +9,13 @@
                     <th>Value</th>
                 </tr>
             </thead>
-            <tbody id='page-application-localstorage-view_tbody'></tbody>
+            <tbody id='page-application-sessionstorage-view_tbody'></tbody>
         </table>
     </div>
 </template>
 <script>
+    let gt = ">";
+    let lt = "<";
     export default {
         mounted() {
 
@@ -24,24 +26,25 @@
             }
 
             // 监听数据改变
-            this.on('localStorage', () => {
+            this.on('sessionStorage', () => {
                 this.updateData();
             });
         },
         methods: {
             clear() {
-                window.localStorage.clear();
+                window.sessionStorage.clear();
             },
             updateData() {
-                let storage = window.localStorage, template = ``;
+                let storage = window.sessionStorage,
+                    template = ``;
                 for (let i = 0; i < storage.length; i++) {
                     let key = storage.key(i);
-                    template += `<tr style='border-bottom: 1px solid white;'>
-              <td style='border-right: 1px solid white;'>${key}</td>
-              <td>${storage.getItem(key)}</td>
-            </tr>`;
+                    template += `${lt}tr style='border-bottom: 1px solid white;'${gt}
+                ${lt}td style='border-right: 1px solid white;'${gt}${key}${lt}/td${gt}
+                ${lt}td${gt}${storage.getItem(key)}${lt}/td${gt}
+            ${lt}/tr${gt}`;
                 }
-                this.$document.getElementById('page-application-localstorage-view_tbody').innerHTML = template;
+                this.$document.getElementById('page-application-sessionstorage-view_tbody').innerHTML = template;
             }
         }
     };

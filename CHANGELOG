@@ -22,3 +22,8 @@ v0.2.1:
     date:2020-12-07
     changes:
       - 修复一些bug
+v0.3.0:
+    date:2021-01-23
+    changes:
+      - 使用QuickPaper代替iCrush主体框架
+      - 去掉 Element 界面

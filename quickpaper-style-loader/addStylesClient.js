@@ -1,4 +1,7 @@
-export default function addStylesClient(parentId, list, isICrushStyle) {
+
+// 目前只提供了一种，直接在浏览器中利用style标签插入样式
+
+export default function addStylesClient(parentId, list, isQuickPaperStyle) {
 
     // 添加样式的方法
     var addStyle = function (iframe) {
@@ -15,8 +18,8 @@ export default function addStylesClient(parentId, list, isICrushStyle) {
             style += list[i][1] + "\n\n";
         }
 
-        // 如果是iCrush内置样式，添加data-icrush-hash
-        if (isICrushStyle) {
+        // 如果是QuickPape内置样式，添加data-quickpape-hash
+        if (isQuickPaperStyle) {
 
             style = style.replace(/( {0,}){/g, "{");
             style = style.replace(/( {0,}),/g, ",");
@@ -46,8 +49,9 @@ export default function addStylesClient(parentId, list, isICrushStyle) {
         }
 
         styleElement.innerHTML = style;
-        styleElement.type = 'text/css';
+        styleElement.setAttribute('type', 'text/css');
         head.appendChild(styleElement);
+
     };
 
     // 由于开始的时候结点可能没有挂载好，定时尝试

@@ -1,9 +1,9 @@
-import xhtml from 'xhtml.js';
+import xhtml from '@hai2007/tool/xhtml.js';
 import { isString, isFunction, isUndefined, isNull, isNumber, isBoolean } from '@hai2007/tool/type';
 
 let doit = (target, obj) => {
 
-    xhtml(target).find('span').bind('click', () => {
+    xhtml.bind(target.getElementsByTagName('span')[0], 'click', () => {
 
         // 如果是字符串，就不需要展开了
         if (isString(obj)) return;
@@ -24,10 +24,10 @@ let doit = (target, obj) => {
                 }
             }
             template += "</ol>";
-            xhtml(target).append(template);
+            xhtml.append(target, template);
 
             // 添加交互
-            let index = 0, lis = xhtml(target).find('li');
+            let index = 0, lis = target.getElementsByTagName('li');
             for (let key in obj) {
                 doit(lis[index++], obj[key]);
             }
