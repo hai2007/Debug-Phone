@@ -17,8 +17,6 @@ QuickPaper.directive('uiToggerClass', {
 
         xhtml.bind(el, 'click', () => {
 
-            viewXhtml.toggerClass(binding.type);
-
             if (xhtml.hasClass(viewXhtml, binding.type)) {
                 xhtml.removeClass(viewXhtml, binding.type);
             } else {

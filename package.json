@@ -1,6 +1,6 @@
 {
   "name": "debug-phone",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "description": "🔧 Debug module for browsers which can Display on page or in Console, for Phone debugging.",
   "main": "dist/debug-phone.min.js",
   "scripts": {
@@ -21,7 +21,7 @@
     "phone",
     "old-ie"
   ],
-  "author": "hai2007",
+  "author": "你好2007",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/hai2007/Debug-Phone/issues"

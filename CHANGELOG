@@ -27,3 +27,7 @@ v0.3.0:
     changes:
       - 使用QuickPaper代替iCrush主体框架
       - 去掉 Element 界面
+v0.3.2:
+    date:2021-01-25
+    changes:
+      - 修复 Element 界面意外抛错问题
