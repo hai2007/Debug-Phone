@@ -11,14 +11,14 @@ window._hai2007_debug_phone_eventarray_ = {};
  */
 
 export default {
-    install(iCrush) {
+    install(QuickPaper) {
 
-        iCrush.prototype.on = (eventType, callback) => {
+        QuickPaper.prototype.on = (eventType, callback) => {
             window._hai2007_debug_phone_eventarray_[eventType] = window._hai2007_debug_phone_eventarray_[eventType] || [];
             window._hai2007_debug_phone_eventarray_[eventType].push(callback);
         };
 
-        iCrush.prototype.trigger = (eventType, data) => {
+        QuickPaper.prototype.trigger = (eventType, data) => {
 
             window._hai2007_debug_phone_eventarray_[eventType] = window._hai2007_debug_phone_eventarray_[eventType] || [];
 

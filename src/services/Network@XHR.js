@@ -35,6 +35,17 @@ export default function (target) {
                         response = this.response;
                     }
 
+                    let responseText = "";
+                    try {
+                        if (this.responseType == "" || this.responseType == 'text') {
+                            responseText = this.responseText;
+                        } else {
+                            responseText = '(Debug Phone)未识别的响应类型：' + this.responseType;
+                        }
+                    } catch (e) {
+                        responseText = "(Debug Phone)捕获异常：" + e;
+                    }
+
                     target.trigger('network@xhr', {
                         method: "end",
                         responseHeaders: this.getAllResponseHeaders(),
@@ -43,7 +54,7 @@ export default function (target) {
                             status: this.status,
                             statusText: this.statusText,
                             response,
-                            responseText: this.responseText
+                            responseText
                         },
                         // 表示正常结束
                         type: 'network-ok',

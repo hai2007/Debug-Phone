@@ -19,13 +19,13 @@
             <div class='showview object' ui-show-object="params"></div>
             <h2>响应头</h2>
             <div class='showview' ui-response-headers='code.responseHeaders'></div>
+            <h2>响应预览</h2>
+            <div class='showview object' ui-show:json='responseType__' ui-show-object="responseMessage_json"></div>
+            <div class='showview' ui-show:normal='responseType__'>无</div>
             <h2>响应内容</h2>
             <div class='showview'>
                 {{responseMessage.responseText}}
             </div>
-            <h2>响应预览</h2>
-            <div class='showview object' ui-show:json='responseType__' ui-show-object="responseMessage_json"></div>
-            <div class='showview' ui-show:normal='responseType__'>无</div>
             <div class='btn' @click='close'>关闭</div>
         </div>
     </div>
