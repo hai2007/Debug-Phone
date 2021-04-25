@@ -61,4 +61,13 @@ export default function (target) {
         });
     });
 
+    // 监听Promise相关错误
+    window.addEventListener('unhandledrejection', event => {
+        let content = event.reason.stack;
+        target.trigger('console', {
+            type: "error",
+            content: [content]
+        });
+    });
+
 };

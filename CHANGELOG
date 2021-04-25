@@ -48,3 +48,7 @@ v1.0.0:
     changes:
       - 删除Application界面（UI不好看，后期如果有时间再好好设计一下）
       - 添加对Promise等特殊错误处理的说明
+v1.0.1:
+    date:2021-04-25
+    changes:
+      - 添加对Promise中错误的捕获功能

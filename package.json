@@ -1,6 +1,6 @@
 {
   "name": "debug-phone",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "🔧 Debug module for browsers which can Display on page or in Console, for Phone debugging.",
   "main": "dist/debug-phone.min.js",
   "scripts": {
